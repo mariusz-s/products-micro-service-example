@@ -1,0 +1,21 @@
+[
+  {
+    "id": null,
+    "name": "",
+    "createdAt": null,
+    "conversations": [
+      {
+        "id": null,
+        "userId": null,
+        "fromUser": "",
+        "received": null,
+        "threads": [
+          {
+            "id": null,
+            "payload": ""
+          }
+        ]
+      }
+    ]
+  }
+]

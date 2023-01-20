@@ -1,0 +1,52 @@
+buildscript {
+	ext.lombok_version = '1.18.24'
+	ext.spring_boot_version = '2.2.2.RELEASE'
+	ext.spring_fox_version = '3.0.0'
+	ext.map_struct_version = '1.5.2.Final'
+	ext.rest_assured_version = '4.1.2'
+	ext.h2_version = '1.4.200'
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
+	}
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.ms.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+dependencies {
+	implementation "org.springframework.boot:spring-boot-starter-data-jdbc"
+	implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+	implementation "org.springframework.boot:spring-boot-starter-web"
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation "io.springfox:springfox-boot-starter:$spring_fox_version"
+	implementation "org.mapstruct:mapstruct:$map_struct_version"
+
+	compileOnly "org.projectlombok:lombok:$lombok_version"
+	annotationProcessor "org.projectlombok:lombok:$lombok_version"
+	annotationProcessor "org.mapstruct:mapstruct-processor:$map_struct_version"
+
+	runtimeOnly "com.h2database:h2:$h2_version"
+
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
+	testImplementation "io.rest-assured:json-path:$rest_assured_version"
+	testImplementation "io.rest-assured:rest-assured:$rest_assured_version"
+	testImplementation "io.rest-assured:xml-path:$rest_assured_version"
+
+	testCompileOnly "org.projectlombok:lombok:$lombok_version"
+	testAnnotationProcessor "org.projectlombok:lombok:$lombok_version"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 11,
+    "name": "earrings",
+    "createdAt": "2021-09-05T17:21:21",
+    "conversations": [
+      {
+        "id": 15,
+        "userId": 33,
+        "fromUser": "info.earrings@example.com",
+        "received": "2019-09-09T17:21:21",
+        "threads": [
+          {
+            "id": 1,
+            "payload": "And then of course I've got them."
+          },
+          {
+            "id": 2,
+            "payload": "earrings? Don't talk to me about them."
+          },
+          {
+            "id": 3,
+            "payload": "Discover must-have earrings like huggies, hoops, studs"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "headphones",
+    "createdAt": "2022-09-08T23:24:18",
+    "conversations": []
+  }
+]
